@@ -15,8 +15,7 @@ dependencyResolutionManagement {
 }
 
 rootProject.name='Log4Java'
-include ':app_log4java'
-project(':app_log4java').projectDir = new File(settingsDir, 'app_log4java')
+include ':app_log4java'git push
 
 include ':forge_installer'
 include ':glfw:jni_bindings'
