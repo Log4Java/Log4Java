@@ -23,7 +23,7 @@ jobs:
         uses: dawidd6/action-download-artifact@v6
         continue-on-error: true
         with:
-          repo: MojoLauncher/LTW
+          repo: Log4Java/LTW
           workflow: android.yml
           workflow_conclusion: success
           name: output-aar
@@ -53,7 +53,7 @@ jobs:
       - name: Create out directory
         run: mkdir out
       - name: Build Publishing .aab
-        if: github.repository_owner == 'MojoLauncher' && github.ref_name == 'v3_openjdk'
+        if: github.repository_owner == 'Mojolauncher' && github.ref_name == 'v3_openjdk'
         run: |
           gradle :app_pojavlauncher:bundleFullGplay
           mv app_pojavlauncher/build/outputs/bundle/fullGplay/app_pojavlauncher-full-gplay.aab out/app-gplay.aab
@@ -69,7 +69,7 @@ jobs:
           gradle :app_pojavlauncher:assembleNoruntimeDebug
           mv app_pojavlauncher/build/outputs/apk/noruntime/debug/app_pojavlauncher-noruntime-debug.apk out/app-debug-noruntime.apk
       - name: Build Nightly Release .apk
-        if: github.repository_owner == 'MojoLauncher' && github.ref_name == 'v3_openjdk'
+        if: github.repository_owner == 'Mojolauncher' && github.ref_name == 'v3_openjdk'
         run: |
           gradle :app_pojavlauncher:assembleFullPubRelease
           mv app_pojavlauncher/build/outputs/apk/full/pubRelease/app_pojavlauncher-full-pubRelease.apk out/MojoLauncher-release.apk
@@ -91,14 +91,14 @@ jobs:
           path: out/app-debug-noruntime.apk
 
       - name: Release Nightly APK
-        if: github.repository_owner == 'MojoLauncher' && github.ref_name == 'v3_openjdk'
+        if: github.repository_owner == 'Mojolauncher' && github.ref_name == 'v3_openjdk'
         uses: softprops/action-gh-release@v3
         with:
-          name: MojoLauncher Nightly Builds
+          name: Log4Java Nightly Builds
           prerelease: true
           tag_name: nightly
           body: |
-            MojoLauncher nightly build.
+            Log4Java nightly build.
             Commit hash: ${{ github.sha }}
           files: |
             out/MojoLauncher-release.apk
@@ -115,7 +115,7 @@ jobs:
         uses: r0adkll/upload-google-play@v1.1.5
         with:
           serviceAccountJsonPlainText: ${{ secrets.SERVICE_JSON }}
-          packageName: git.artdeell.mjlaunch
+          packageName: git.ghostfox.log4java
           releaseFiles: out/app-gplay.aab
           track: internal
           inAppUpdatePriority: 5
