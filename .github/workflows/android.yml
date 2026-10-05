@@ -52,11 +52,6 @@ jobs:
           java-version: '17'
       - name: Create out directory
         run: mkdir out
-      - name: Build Publishing .aab
-        if: github.repository_owner == 'Log4Java' && github.ref_name == 'v3_openjdk'
-        run: |
-          gradle :app_log4java:bundleFullGplay
-          mv app_log4java/build/outputs/bundle/fullGplay/app_log4java-full-gplay.aab out/app-gplay.aab
 
       - name: Build Debug .apk
         run: |
