@@ -15,7 +15,7 @@ dependencyResolutionManagement {
 }
 
 rootProject.name='Log4Java'
-include ':app_log4java'git push
+include ':app_log4java'
 
 include ':forge_installer'
 include ':glfw:jni_bindings'
