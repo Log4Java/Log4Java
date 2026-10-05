@@ -15,7 +15,8 @@ dependencyResolutionManagement {
 }
 
 rootProject.name='Log4Java'
-include ':app_pojavlauncher'
+include ':app_log4java'
+project(':app_log4java').projectDir = new File(settingsDir, 'app_log4java')
 
 include ':forge_installer'
 include ':glfw:jni_bindings'
