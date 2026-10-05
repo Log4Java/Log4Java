@@ -3,7 +3,7 @@
 	url = https://github.com/Log4Java/glfw
 [submodule "mojoexec"]
 	path = mojoexec
-	url = https://github.com/MojoLauncher/mojoexec
+	url = https://github.com/Log4Java/mojoexec
 [submodule "sdl"]
 	path = sdl
-	url = https://github.com/MojoLauncher/MojoSDL
+	url = https://github.com/Log4Java/SDL
