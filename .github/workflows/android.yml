@@ -31,7 +31,7 @@ jobs:
 
       - name: Get Mesa
         run: |
-          curl -L -o app_log4java/libs/mesa-unified2.aar https://github.com/Log4Java/mesa-unified2/releases/tag/v1.0.0
+          curl -L -o app_log4java/src/main/jniLibs/mesa-unified2.aar https://github.com/Log4Java/mesa-unified2/releases/tag/v1.0.0
               
       - uses: gradle/actions/setup-gradle@v4
         with:
