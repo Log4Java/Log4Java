@@ -34,7 +34,7 @@ jobs:
         with:
           github_token: ${{ secrets.MESA_DOWNLOAD_TOKEN }}
           repo: Log4Java/mesa-unified2
-          name: mesa-unified2
+          name: mesa-unified2.aar
           path: app_log4java/libs
           
 
