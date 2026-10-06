@@ -35,7 +35,7 @@ jobs:
           github_token: ${{ secrets.MESA_DOWNLOAD_TOKEN }}
           repo: Log4Java/mesa-unified2
           name: mesa-unified2
-          path: app/log4java/libs
+          path: app_log4java/libs
           
 
       - uses: gradle/actions/setup-gradle@v4
