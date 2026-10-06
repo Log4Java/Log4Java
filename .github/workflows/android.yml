@@ -30,14 +30,10 @@ jobs:
           path: app_log4java/libs
 
       - name: Get Mesa
-        uses: dawidd6/action-download-artifact@v6
-        with:
-          github_token: ${{ secrets.MESA_DOWNLOAD_TOKEN }}
-          repo: Log4Java/mesa-unified2
-          name: mesa-unified2.aar
-          path: app_log4java/libs
+        run: |
+          curl -L -o app_log4java/libs/mesa-unified2.aar https://github.com/Log4Java/mesa-unified2
           
-
+          
       - uses: gradle/actions/setup-gradle@v4
         with:
           gradle-version: "8.14.3"
